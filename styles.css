@@ -1,0 +1,134 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+:root {
+  --blanco: rgba(228,228,228,1);
+  --portada-fondo: url('img/fondo-azul-degradado-de-lujo-abstracto-azul-oscuro-liso-con-banner-de-estudio-de-vineta-negra.jpg');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a0a1a;
+}
+
+.Reproductor-de-musica {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--blanco);
+  width: 380px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(228,228,228,0.1);
+}
+
+
+.Reproductor-de-musica::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--portada-fondo);
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease, background-image 0.5s ease;
+}
+
+.Reproductor-de-musica.fondo-activo::before {
+  opacity: 1;
+}
+
+.Reproductor-de-musica h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.Reproductor-de-musica p {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+
+#portada {
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#portada:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+#progreso {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 7px;
+  background: rgba(165, 165, 165, 0.4);
+  border-radius: 4px;
+  margin: 32px 0 24px;
+  cursor: pointer;
+}
+
+#progreso::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(165, 165, 165, 0.9);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  outline: 4px solid var(--blanco);
+  box-shadow: 0 6px 10px rgba(228, 228, 228, 0.3);
+}
+
+.controles {
+  display: flex;
+  justify-content: center;
+}
+
+.controles button {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  background: rgba(165, 165, 165, 0.3);
+  color: var(--blanco);
+  border-radius: 50%;
+  border: 1px solid var(--blanco);
+  outline: 0;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 10px rgba(228, 228, 228, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controles button:hover {
+  transform: scale(1.1);
+}
+
+.controles .iconoControl {
+  transform: scale(1.3);
+}
+
+.controles .iconoControl:hover {
+  transform: scale(1.4);
+}
+
